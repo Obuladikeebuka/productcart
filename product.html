@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fall Limited Edition Sneakers</title>
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <img src="/assets/images/logo.svg" alt="Sneakers Logo" class="logo" />
+          <ul class="nav-links">
+            <li><a href="#">Collectors</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+          🛒<span id="cart-count">0</span>
+        </div>
+        <img
+          src="/assets/images/image-avatar.png"
+          alt="Profile"
+          class="profile-icon"
+        />
+      </nav>
+    </header>
+
+    <main class="product-card">
+      <section class="gallery">
+        <div class="main-image" onclick="openLightbox()">
+          <img
+            id="current-image"
+            src="/assets/images/product1.jpg"
+            alt="Sneakers"
+          />
+        </div>
+        <div class="thumbnails">
+          <img
+            src="/assets/images/product1.jpg"
+            onclick="switchImage(this)"
+          />
+          <img src="/assets/images/product2.jpg" onclick="switchImage(this)" />
+          <img src="/assets/images/product3.jpg" onclick="switchImage(this)" />
+          <img src="/assets/images/product4.jpg" onclick="switchImage(this)" />
+        </div>
+      </section>
+
+      <section class="product-details">
+        <h1 class="h1">SNEAKER COMPANY</h1>
+        <h2 class="h2">
+          Fall Limited Edition <br />
+          Sneakers
+        </h2>
+        <p class="description">
+          These sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they will withstand everything the weather
+          can offer.
+        </p>
+
+        <div class="price">
+          <div class="price-top">
+            <span class="discounted">$125.00</span>
+            <span class="discount-tag">50%</span>
+          </div>
+          <span class="original">$250.00</span>
+        </div>
+
+        <div class="quantity-selector">
+          <button onclick="decreaseQty()">−</button>
+          <input type="number" id="quantity" value="0" min="0" />
+          <button onclick="increaseQty()">+</button>
+          <button class="add-to-cart" onclick="addToCart()">
+            🛒 Add to Cart
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <aside id="cart" class="cart hidden">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" onclick="toggleCart()">✖</button>
+      </div>
+      <ul id="cart-items"></ul>
+      <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
+    </aside>
+
+    <div id="lightbox" class="lightbox hidden">
+      <button class="lightbox-close" onclick="closeLightbox()">✖</button>
+      <img
+        id="lightbox-image"
+        src="/assets/images/product1.jpg"
+        alt="Zoomed Sneaker"
+      />
+    </div>`
+    <script src="product.js"></script>
+  </body>
+</html>
